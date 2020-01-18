@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <h1>hello world, This is React</h1>
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      <Person name='kamal' age='19'></Person>
+      <Person name='dean' age='16'></Person>
+      <Person name='jesse' age='20'></Person>
     </div>
   );
 }
