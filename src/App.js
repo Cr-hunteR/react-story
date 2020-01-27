@@ -30,6 +30,15 @@ class App extends Component  {
     })
   }
   render(){
+    /*React Inline CSS  */
+    const reactInlineCss={
+      backgroundColor:'#999',
+      padding:'15px',
+      border:'1px solid black',
+      cursor:'pointer',
+      borderRadius:'10px',
+      margin:'20px'
+    }
     return (
       <div className="App">
         <h1>hello world, This is React</h1>
@@ -45,7 +54,7 @@ class App extends Component  {
 
         <Person name={this.state.persons[2].name} 
         age={this.state.persons[2].age} extra={this.stateChanger.bind(this,'bicycle')}></Person>
-        <button onClick={this.stateChanger.bind(this,'butn')}>Changer</button>
+        <button style={reactInlineCss} onClick={this.stateChanger.bind(this,'butn')}>Changer</button>
       </div>
     );
   }
