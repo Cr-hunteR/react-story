@@ -20,6 +20,15 @@ class App extends Component  {
       ]
     })
   }
+  nameChanger=(event)=>{
+    this.setState({
+      persons:[
+        {name: 'janet', age:1},
+        {name: event.target.value, age:15},
+        {name: 'roy', age:34}
+      ]
+    })
+  }
   render(){
     return (
       <div className="App">
@@ -30,8 +39,10 @@ class App extends Component  {
         <Person name={this.state.persons[0].name} 
         age={this.state.persons[0].age} extra={()=>this.stateChanger('arrow function')}>
         This is some extra info about dean.</Person>{/* using arrow function */}
+
         <Person name={this.state.persons[1].name} 
-        age={this.state.persons[1].age}></Person>
+        age={this.state.persons[1].age} changed={this.nameChanger}></Person>{/*name changer using a text box */}
+
         <Person name={this.state.persons[2].name} 
         age={this.state.persons[2].age} extra={this.stateChanger.bind(this,'bicycle')}></Person>
         <button onClick={this.stateChanger.bind(this,'butn')}>Changer</button>
