@@ -10,11 +10,11 @@ class App extends Component  {
       {name:'roy', age:34}
     ]
   }
-  stateChanger=()=>{
+  stateChanger=(newName)=>{
     //this.setState.persons[0].name='jesse';
     this.setState({
       persons:[
-        {name:'jensen', age:18},
+        {name:newName, age:1},
         {name:'jane', age:15},
         {name:'roy', age:34}
       ]
@@ -28,13 +28,13 @@ class App extends Component  {
         age='19'></Person>
         
         <Person name={this.state.persons[0].name} 
-        age={this.state.persons[0].age} extra={this.stateChanger}>
-        This is some extra info about dean.</Person>
+        age={this.state.persons[0].age} extra={()=>this.stateChanger('arrow function')}>
+        This is some extra info about dean.</Person>{/* using arrow function */}
         <Person name={this.state.persons[1].name} 
         age={this.state.persons[1].age}></Person>
         <Person name={this.state.persons[2].name} 
-        age={this.state.persons[2].age}></Person>
-        <button onClick={this.stateChanger}>Changer</button>
+        age={this.state.persons[2].age} extra={this.stateChanger.bind(this,'bicycle')}></Person>
+        <button onClick={this.stateChanger.bind(this,'butn')}>Changer</button>
       </div>
     );
   }
